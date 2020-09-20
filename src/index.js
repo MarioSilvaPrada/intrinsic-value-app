@@ -22,7 +22,7 @@ const root = (
       <Switch>
         <Route exact path="/" component={App} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/sign-up" component={Signup} />
         <Route path="*" component={PageNotFound} />
       </Switch>
     </Router>
