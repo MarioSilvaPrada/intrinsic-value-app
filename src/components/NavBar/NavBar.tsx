@@ -7,7 +7,7 @@ const NavBar = () => (
     <S.StyledLink to="/">Home</S.StyledLink>
     <div>
       <S.StyledLink left to="/login">Login</S.StyledLink>
-      <S.StyledLink left to="/signup">Sign Up</S.StyledLink>
+      <S.StyledLink left to="/sign-up">Sign Up</S.StyledLink>
     </div>
   </S.Container>
 );
