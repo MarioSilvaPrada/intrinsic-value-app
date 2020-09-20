@@ -8,7 +8,6 @@ const Layout = () => {
         <ThemeProvider theme={theme}>
             <S.Container>
                 <h1>ola</h1>
-                {console.log(typeof theme)}
             </S.Container>
         </ThemeProvider>
     )

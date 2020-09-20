@@ -9,6 +9,11 @@ export const Container = styled.div`
 `;
 
 export const StyledLink = styled(Link)`
-    ${(props: { left: boolean }) => (props.left ? css`margin-left: 2rem` : css`margin-right: 2rem`)};
+    margin-left: 2rem;
 `;
+
+export const MainLink = styled(StyledLink)`
+    margin-left: 0;
+    margin-right: 2rem;
+`
 
