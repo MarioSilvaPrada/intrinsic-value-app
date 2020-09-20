@@ -1,7 +1,7 @@
 const theme = {
   dark: {
-    background: '#323232',
-    color: 'white',
+    background: 'rgb(11,14,19)',
+    heading: '#fddb3a',
   },
   light: {
     color: '#222831',

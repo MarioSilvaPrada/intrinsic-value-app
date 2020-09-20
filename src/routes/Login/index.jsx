@@ -1,10 +1,10 @@
 import React from 'react';
-import * as S from './Login.styled';
+import Layout from 'components/Layout/index.tsx';
 
 const Page1 = () => (
-  <S.Wrapper>
+  <Layout>
     <h1>Login</h1>
-  </S.Wrapper>
+  </Layout>
 );
 
 export default Page1;
