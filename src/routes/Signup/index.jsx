@@ -1,9 +1,9 @@
 import React from 'react';
-import * as S from './Page.styled';
+import * as S from './Signup.styled';
 
 const Page2 = () => (
   <S.Wrapper>
-    <S.Title>Page 2</S.Title>
+    <S.Title>Sign Up</S.Title>
   </S.Wrapper>
 );
 
