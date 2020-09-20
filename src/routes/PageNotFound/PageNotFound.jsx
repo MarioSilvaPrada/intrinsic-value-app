@@ -1,10 +1,10 @@
 import React from 'react';
-import * as S from './PageNotFound.styled';
+import Layout from 'components/Layout/index.tsx';
 
 const PageNotFound = () => (
-  <S.Wrapper>
+  <Layout>
     <h1>Page Not Found</h1>
-  </S.Wrapper>
+  </Layout>
 );
 
 export default PageNotFound;

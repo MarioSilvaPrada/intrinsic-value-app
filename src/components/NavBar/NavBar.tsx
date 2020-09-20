@@ -1,15 +1,21 @@
 import * as React from 'react';
-
+import theme from '../../theme/theme'
 import * as S from './NavBar.styled';
 
-const NavBar = () => (
-  <S.Container>
-    <S.MainLink to="/">Home</S.MainLink>
-    <div>
-      <S.StyledLink to="/login">Login</S.StyledLink>
-      <S.StyledLink to="/sign-up">Sign Up</S.StyledLink>
-    </div>
-  </S.Container>
-);
+const NavBar = () => {
+  const activeLink = {
+    borderBottom: `3px solid ${theme.dark.heading}`,
+
+  };
+  return (
+    <S.Container>
+      <S.MainLink activeStyle={activeLink} exact to="/">Home</S.MainLink>
+      <S.Wrapper>
+        <S.StyledLink activeStyle={activeLink} to="/login">Login</S.StyledLink>
+        <S.StyledLink activeStyle={activeLink} to="/sign-up">Sign Up</S.StyledLink>
+      </S.Wrapper>
+    </S.Container>
+  )
+};
 
 export default NavBar;

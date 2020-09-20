@@ -1,10 +1,11 @@
 import React from 'react';
+import Layout from 'components/Layout/index.tsx';
 import * as S from './Signup.styled';
 
 const Page2 = () => (
-  <S.Wrapper>
+  <Layout>
     <S.Title>Sign Up</S.Title>
-  </S.Wrapper>
+  </Layout>
 );
 
 export default Page2;

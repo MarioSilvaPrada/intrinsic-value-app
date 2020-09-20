@@ -9,7 +9,8 @@ const Layout = ({ children }) => {
         <ThemeProvider theme={theme}>
             <S.Container>
                 <Header />
-                {children}
+
+                <S.Body>{children}</S.Body>
             </S.Container>
         </ThemeProvider>
     )
