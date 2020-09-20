@@ -4,7 +4,6 @@ import './index.css';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import NavBar from './components/NavBar/NavBar.tsx';
 import App from './routes/App/App';
 import theme from './theme/theme';
 // Pages
@@ -18,7 +17,6 @@ const rootElement = document.getElementById('root');
 const root = (
   <ThemeProvider theme={theme}>
     <Router>
-      <NavBar />
       <Switch>
         <Route exact path="/" component={App} />
         <Route exact path="/login" component={Login} />
