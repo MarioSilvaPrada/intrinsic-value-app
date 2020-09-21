@@ -58,14 +58,16 @@ const App = () => {
     <Layout>
       <S.Title>Home</S.Title>
       <S.InputWrapper>
-        {fieldsInputs.map(({ fieldName, fieldType, value, setValue, tip }) => (
+        {fieldsInputs.map(({
+          fieldName, fieldType, value, setValue, tip,
+        }) => (
           <S.RowInput key={fieldName}>
             <S.Label>
               <p>{fieldName}</p>
               {tip && (
-                <S.Tip>
-                  <BsQuestionCircleFill />
-                </S.Tip>
+              <S.Tip>
+                <BsQuestionCircleFill />
+              </S.Tip>
               )}
             </S.Label>
             <S.StyledInput
