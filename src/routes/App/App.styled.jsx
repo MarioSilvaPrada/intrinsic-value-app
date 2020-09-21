@@ -9,7 +9,7 @@ export const Title = styled.h1`
 `;
 
 export const InputWrapper = styled.div`
-  max-width: 40rem;
+  max-width: 45rem;
   margin: 0 auto;
   border: 2px solid rgba(255, 255, 255, 0.9);
   border-radius: 5px;
@@ -26,6 +26,11 @@ export const RowInput = styled.div`
     margin-bottom: 0;
   }
 `;
+
+export const Tip = styled.div`
+  cursor: pointer;
+  font-size: .8rem;
+`
 
 export const StyledInput = styled.input`
   border-radius: 5px;
@@ -45,4 +50,10 @@ export const StyledInput = styled.input`
 export const Label = styled.p`
   margin-right: 1rem;
   min-width: 10rem;
+  display: flex;
+  align-items: center;
+
+  p {
+      margin-right: .3rem;
+  }
 `;
