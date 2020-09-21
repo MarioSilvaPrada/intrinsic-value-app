@@ -1,42 +1,63 @@
 import React from 'react';
 import Layout from 'components/Layout/index.tsx';
 
+import Table from '../../components/Table/index.tsx';
 import * as S from './App.styled';
 
-const App = () => (
-  <Layout>
-    <h1>Home</h1>
-    <S.StyledTable>
-      <S.Row>
-        <S.TableHeader>Year</S.TableHeader>
-        <S.TableData>2021</S.TableData>
-        <S.TableData>2022</S.TableData>
-        <S.TableData>2023</S.TableData>
-        <S.TableData>2024</S.TableData>
-      </S.Row>
-      <S.Row>
-        <S.TableHeader>Cash Flow (Projected)</S.TableHeader>
-        <S.TableData>2021</S.TableData>
-        <S.TableData>2022</S.TableData>
-        <S.TableData>2023</S.TableData>
-        <S.TableData>2024</S.TableData>
-      </S.Row>
-      <S.Row>
-        <S.TableHeader>Discount factor</S.TableHeader>
-        <S.TableData>2021</S.TableData>
-        <S.TableData>2022</S.TableData>
-        <S.TableData>2023</S.TableData>
-        <S.TableData>2024</S.TableData>
-      </S.Row>
-      <S.Row>
-        <S.TableHeader>Discounted value</S.TableHeader>
-        <S.TableData>2021</S.TableData>
-        <S.TableData>2022</S.TableData>
-        <S.TableData>2023</S.TableData>
-        <S.TableData>2024</S.TableData>
-      </S.Row>
-    </S.StyledTable>
-  </Layout>
-);
+const App = () => {
+  const fieldsInputs = [
+    {
+      fieldName: 'Stock Name',
+      fieldType: 'text',
+    },
+    {
+      fieldName: 'Stock Symbol',
+      fieldType: 'text',
+    },
+    {
+      fieldName: 'Operating Cash Flow',
+      fieldType: 'number',
+    },
+    {
+      fieldName: 'Total Debt (Short term + Long Term)',
+      fieldType: 'number',
+    },
+    {
+      fieldName: 'Cash and Short term investments',
+      fieldType: 'number',
+    },
+    {
+      fieldName: 'Cash flow growth rate (Yr 1 - 3)',
+      fieldType: 'number',
+    },
+    {
+      fieldName: 'Cash flow growth rate (Yr 4 - 10)',
+      fieldType: 'number',
+    },
+    {
+      fieldName: 'No of shares Outstanding',
+      fieldType: 'number',
+    },
+    {
+      fieldName: 'Discount Rate',
+      fieldType: 'number',
+    },
+  ];
+
+  return (
+    <Layout>
+      <S.Title>Home</S.Title>
+      <S.InputWrapper>
+        {fieldsInputs.map(({ fieldName, fieldType }) => (
+          <S.RowInput>
+            <S.Label>{fieldName}</S.Label>
+            <S.StyledInput type={fieldType} />
+          </S.RowInput>
+        ))}
+      </S.InputWrapper>
+      <Table />
+    </Layout>
+  );
+};
 
 export default App;
