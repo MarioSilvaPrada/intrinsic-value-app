@@ -47,7 +47,7 @@ const App = () => {
     {
       fieldName: 'Discount Rate',
       fieldType: 'number',
-      tip: true,
+      tip: false,
     },
   ];
 
