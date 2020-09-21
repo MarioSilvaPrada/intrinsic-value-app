@@ -5,7 +5,7 @@ import Table from '../../components/Table/index.tsx';
 import * as S from './App.styled';
 
 const App = () => {
-  const [discountRate, setDiscountRate] = useState('');
+  const [discountRate, setDiscountRate] = useState(0);
   const fieldsInputs = [
     {
       fieldName: 'Stock Name',
