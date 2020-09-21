@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from 'components/Layout/index.tsx';
 import { BsQuestionCircleFill } from 'react-icons/bs';
 import Table from '../../components/Table/index.tsx';
 import * as S from './App.styled';
 
 const App = () => {
+  const [discountRate, setDiscountRate] = useState('');
   const fieldsInputs = [
     {
       fieldName: 'Stock Name',
@@ -47,6 +48,8 @@ const App = () => {
     {
       fieldName: 'Discount Rate',
       fieldType: 'number',
+      value: discountRate,
+      setValue: (e) => setDiscountRate(e.target.value),
       tip: true,
     },
   ];
@@ -55,8 +58,8 @@ const App = () => {
     <Layout>
       <S.Title>Home</S.Title>
       <S.InputWrapper>
-        {fieldsInputs.map(({ fieldName, fieldType, tip }) => (
-          <S.RowInput>
+        {fieldsInputs.map(({ fieldName, fieldType, value, setValue, tip }) => (
+          <S.RowInput key={fieldName}>
             <S.Label>
               <p>{fieldName}</p>
               {tip && (
@@ -65,7 +68,11 @@ const App = () => {
                 </S.Tip>
               )}
             </S.Label>
-            <S.StyledInput type={fieldType} />
+            <S.StyledInput
+              type={fieldType}
+              value={value}
+              onChange={setValue}
+            />
           </S.RowInput>
         ))}
       </S.InputWrapper>
