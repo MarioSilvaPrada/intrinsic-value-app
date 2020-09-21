@@ -30,7 +30,7 @@ export const RowInput = styled.div`
 export const Tip = styled.div`
   cursor: pointer;
   font-size: .8rem;
-`
+`;
 
 export const StyledInput = styled.input`
   border-radius: 5px;
