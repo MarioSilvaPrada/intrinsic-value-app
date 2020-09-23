@@ -11,9 +11,10 @@ export const Title = styled.h1`
 export const InputWrapper = styled.div`
   max-width: 45rem;
   margin: 0 auto;
-  border: 2px solid rgba(255, 255, 255, 0.9);
   border-radius: 5px;
   padding: 1.5rem;
+  background: #56556e;
+  border: 1px solid white;s
 `;
 
 export const RowInput = styled.div`
@@ -29,7 +30,7 @@ export const RowInput = styled.div`
 
 export const Tip = styled.div`
   cursor: pointer;
-  font-size: .8rem;
+  font-size: 0.8rem;
 `;
 
 export const StyledInput = styled.input`
@@ -43,7 +44,7 @@ export const StyledInput = styled.input`
   border: 2px solid transparent;
 
   &:focus {
-    border: 2px solid ${({ theme }) => theme.dark.heading};
+    border: 2px solid ${({ theme }) => theme.dark.background};
   }
 `;
 
@@ -54,6 +55,6 @@ export const Label = styled.p`
   align-items: center;
 
   p {
-      margin-right: .3rem;
+    margin-right: 0.3rem;
   }
 `;
