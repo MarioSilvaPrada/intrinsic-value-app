@@ -80,6 +80,8 @@ export const CalculateBtn = styled.button`
 
 export const ErrorMessage = styled.p`
   color: ${({ theme }) => theme.dark.error};
-  margin-top: 4px;
+  margin-top: 3px;
   font-size: 0.9rem;
+  opacity: ${({ showError }) => (showError ? 1 : 0)};
+  transition: 0.4s;
 `;

@@ -15,6 +15,12 @@ const App = () => {
   const [noShares, setNoShares] = useState('');
   const [discountRate, setDiscountRate] = useState('');
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const onSubmit = () => {
+    setIsSubmitted(true);
+  };
+
   const fieldsInputs = [
     {
       fieldName: 'Stock Name',
@@ -83,31 +89,41 @@ const App = () => {
     <Layout>
       <S.Title>Home</S.Title>
       <S.InputWrapper>
-        {fieldsInputs.map(({
-          fieldName, fieldType, value, setValue, tip,
-        }) => (
+        {fieldsInputs.map(({ fieldName, fieldType, value, setValue, tip }) => (
           <S.RowInput key={fieldName}>
             <S.Label>
               <p>{fieldName}</p>
               {tip && (
-              <S.Tip>
-                <BsQuestionCircleFill />
-              </S.Tip>
+                <S.Tip>
+                  <BsQuestionCircleFill />
+                </S.Tip>
               )}
             </S.Label>
-            <div>
+            <>
               <S.StyledInput
                 type={fieldType}
                 value={value}
                 onChange={setValue}
               />
-              <S.ErrorMessage>Erro!</S.ErrorMessage>
-            </div>
+              <S.ErrorMessage showError={!value && isSubmitted}>
+                You must insert this value
+              </S.ErrorMessage>
+            </>
           </S.RowInput>
         ))}
-        <S.CalculateBtn>Calculate</S.CalculateBtn>
+        <S.CalculateBtn onClick={onSubmit}>Calculate</S.CalculateBtn>
       </S.InputWrapper>
-      <Table />
+      <Table
+        name={name}
+        symbol={symbol}
+        cashFlow={cashFlow}
+        debt={debt}
+        cash={cash}
+        growRate={growRate}
+        longGrowRate={longGrowRate}
+        noShares={noShares}
+        discountRate={discountRate}
+      />
     </Layout>
   );
 };
