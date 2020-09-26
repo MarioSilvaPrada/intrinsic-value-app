@@ -83,21 +83,27 @@ const App = () => {
     <Layout>
       <S.Title>Home</S.Title>
       <S.InputWrapper>
-        {fieldsInputs.map(({
-          fieldName, fieldType, value, setValue, tip,
-        }) => (
+        {fieldsInputs.map(({ fieldName, fieldType, value, setValue, tip }) => (
           <S.RowInput key={fieldName}>
             <S.Label>
               <p>{fieldName}</p>
               {tip && (
-              <S.Tip>
-                <BsQuestionCircleFill />
-              </S.Tip>
+                <S.Tip>
+                  <BsQuestionCircleFill />
+                </S.Tip>
               )}
             </S.Label>
-            <S.StyledInput type={fieldType} value={value} onChange={setValue} />
+            <div>
+              <S.StyledInput
+                type={fieldType}
+                value={value}
+                onChange={setValue}
+              />
+              <S.ErrorMessage>Erro!</S.ErrorMessage>
+            </div>
           </S.RowInput>
         ))}
+        <S.CalculateBtn>Calculate</S.CalculateBtn>
       </S.InputWrapper>
       <Table />
     </Layout>

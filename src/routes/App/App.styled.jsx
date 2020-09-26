@@ -14,13 +14,15 @@ export const InputWrapper = styled.div`
   border-radius: 5px;
   padding: 1.5rem;
   background: #56556e;
-  border: 1px solid white;s
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const RowInput = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   align-items: center;
 
   &:last-child {
@@ -42,7 +44,7 @@ export const StyledInput = styled.input`
   padding: 0.5rem 1rem;
   text-align: center;
   border: 2px solid transparent;
-
+  width: 100%;
   &:focus {
     border: 2px solid ${({ theme }) => theme.dark.background};
   }
@@ -57,4 +59,27 @@ export const Label = styled.p`
   p {
     margin-right: 0.3rem;
   }
+`;
+
+export const CalculateBtn = styled.button`
+  border: none;
+  background: ${({ theme }) => theme.dark.heading};
+  color: ${({ theme }) => theme.dark.background};
+  border-radius: 5px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-top: 2rem;
+  transition: 0.4s;
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+
+export const ErrorMessage = styled.p`
+  color: ${({ theme }) => theme.dark.error};
+  margin-top: 4px;
+  font-size: 0.9rem;
 `;
