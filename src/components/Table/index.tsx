@@ -17,6 +17,7 @@ const Table = ({
   let allYears = [];
   let cashFlowRow = [];
   let discountFactorRow = [];
+  let discountValueRow = [];
 
   for (let i = 1; i <= 10; i++) {
     allYears.push(<S.TableData>{currentYear + i}</S.TableData>);
@@ -41,17 +42,28 @@ const Table = ({
 
   const calculateDiscountFactor = () => {
     for (let i = 1; i <= 10; i++) {
-      let firstCalculation = (1 + discountRate) ^ i;
+      let firstCalculation = Math.pow(1 + discountRate, i);
       let currentDiscount = 1 / firstCalculation;
-      console.log(firstCalculation);
+
       discountFactorRow.push(
         <S.TableData>{currentDiscount.toFixed(2)}</S.TableData>
       );
     }
   };
 
+  const calculateDiscountValue = () => {
+    console.log(allYears[0].props.children);
+    for (let i = 0; i < 10; i++) {
+      let cf = parseFloat(cashFlowRow[i].props.children);
+      let df = parseFloat(discountFactorRow[i].props.children);
+      let finalValue = cf * df;
+      discountValueRow.push(<S.TableData>{finalValue.toFixed(2)}</S.TableData>);
+    }
+  };
+
   calculateCashFlow();
   calculateDiscountFactor();
+  calculateDiscountValue();
 
   return (
     <S.StyledTable>
@@ -69,10 +81,7 @@ const Table = ({
       </S.Row>
       <S.Row>
         <S.TableHeader>Discounted value</S.TableHeader>
-        <S.TableData>2021</S.TableData>
-        <S.TableData>2022</S.TableData>
-        <S.TableData>2023</S.TableData>
-        <S.TableData>2024</S.TableData>
+        {discountValueRow}
       </S.Row>
     </S.StyledTable>
   );
