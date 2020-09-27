@@ -26,16 +26,16 @@ const Table = ({
     let currentCashFlow = cashFlow;
 
     for (let i = 1; i <= 10; i++) {
-      let calulatedChashFlow;
+      let calulatedCashFlow;
       if (i < 4) {
-        calulatedChashFlow = currentCashFlow * (1 + growRate);
+        calulatedCashFlow = currentCashFlow * (1 + growRate);
       } else {
-        calulatedChashFlow = currentCashFlow * (1 + longGrowRate);
+        calulatedCashFlow = currentCashFlow * (1 + longGrowRate);
       }
       cashFlowRow.push(
-        <S.TableData>{calulatedChashFlow.toFixed(2)}</S.TableData>
+        <S.TableData>{calulatedCashFlow.toFixed(2)}</S.TableData>
       );
-      currentCashFlow = calulatedChashFlow;
+      currentCashFlow = calulatedCashFlow;
     }
   };
 
